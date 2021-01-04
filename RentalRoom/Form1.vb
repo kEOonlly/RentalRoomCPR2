@@ -55,7 +55,16 @@ Public Class Form1
         End If
     End Sub
 
+    Private Sub Guna2TextBox1_TextChanged(sender As Object, e As EventArgs)
+
+    End Sub
+
     Dim SqlCmdSearchstr As String
+
+    Private Sub MaterialSingleLineTextField1_Click(sender As Object, e As EventArgs) Handles MaterialSingleLineTextField1.Click
+
+    End Sub
+
     Dim Col0Ram As Integer = 0
 
     Private Sub btnsave_Click(sender As Object, e As EventArgs) Handles btnsave.Click
@@ -83,6 +92,25 @@ Public Class Form1
 
     Private Sub tbID_KeyDown(sender As Object, e As KeyEventArgs) Handles tbID.KeyDown, tbname.KeyDown, tbsname.KeyDown, tbgender.KeyDown, tbphone.KeyDown
         If e.KeyCode = Keys.Enter Then
+            SendKeys.Send("{TAB}")
+        Else
+            Exit Sub
+        End If
+        e.SuppressKeyPress = True
+    End Sub
+
+    Private Sub Guna2TextBox1_KeyDown(sender As Object, e As KeyEventArgs)
+        If e.KeyCode = Keys.Enter Then
+            SendKeys.Send("{TAB}")
+        Else
+            Exit Sub
+        End If
+        e.SuppressKeyPress = True
+    End Sub
+
+    Private Sub MaterialSingleLineTextField1_KeyDown(sender As Object, e As KeyEventArgs) Handles MaterialSingleLineTextField1.KeyDown, MaterialSingleLineTextField2.KeyDown, MaterialSingleLineTextField3.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            SendKeys.Send("{TAB}")
             SendKeys.Send("{TAB}")
         Else
             Exit Sub
